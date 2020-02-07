@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		F103823D23ECD11F008708B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F103823C23ECD11F008708B4 /* Assets.xcassets */; };
 		F103824023ECD11F008708B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F103823E23ECD11F008708B4 /* LaunchScreen.storyboard */; };
 		F103824B23ECD120008708B4 /* Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103824A23ECD120008708B4 /* Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift */; };
+		F103825623ECD1BB008708B4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103825523ECD1BB008708B4 /* MainView.swift */; };
+		F103825923ECF013008708B4 /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = F103825823ECF013008708B4 /* ImageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 		F103824623ECD120008708B4 /* Pursuit-Core-iOS-Keyboard-Handling-LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pursuit-Core-iOS-Keyboard-Handling-LabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F103824A23ECD120008708B4 /* Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift; sourceTree = "<group>"; };
 		F103824C23ECD120008708B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F103825523ECD1BB008708B4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F103825923ECF013008708B4 /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,7 @@
 				F103823323ECD11A008708B4 /* AppDelegate.swift */,
 				F103823523ECD11A008708B4 /* SceneDelegate.swift */,
 				F103823723ECD11A008708B4 /* ViewController.swift */,
+				F103825523ECD1BB008708B4 /* MainView.swift */,
 				F103823923ECD11A008708B4 /* Main.storyboard */,
 				F103823C23ECD11F008708B4 /* Assets.xcassets */,
 				F103823E23ECD11F008708B4 /* LaunchScreen.storyboard */,
@@ -115,6 +120,9 @@
 			dependencies = (
 			);
 			name = "Pursuit-Core-iOS-Keyboard-Handling-Lab";
+			packageProductDependencies = (
+				F103825823ECF013008708B4 /* ImageKit */,
+			);
 			productName = "Pursuit-Core-iOS-Keyboard-Handling-Lab";
 			productReference = F103823023ECD11A008708B4 /* Pursuit-Core-iOS-Keyboard-Handling-Lab.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +173,9 @@
 				Base,
 			);
 			mainGroup = F103822723ECD11A008708B4;
+			packageReferences = (
+				F103825723ECF013008708B4 /* XCRemoteSwiftPackageReference "ImageKit" */,
+			);
 			productRefGroup = F103823123ECD11A008708B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F103823823ECD11A008708B4 /* ViewController.swift in Sources */,
+				F103825623ECD1BB008708B4 /* MainView.swift in Sources */,
 				F103823423ECD11A008708B4 /* AppDelegate.swift in Sources */,
 				F103823623ECD11A008708B4 /* SceneDelegate.swift in Sources */,
 			);
@@ -469,6 +481,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F103825723ECF013008708B4 /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F103825823ECF013008708B4 /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F103825723ECF013008708B4 /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F103822823ECD11A008708B4 /* Project object */;
 }
