@@ -16,6 +16,8 @@
 		F103824B23ECD120008708B4 /* Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103824A23ECD120008708B4 /* Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift */; };
 		F103825623ECD1BB008708B4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103825523ECD1BB008708B4 /* MainView.swift */; };
 		F103825923ECF013008708B4 /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = F103825823ECF013008708B4 /* ImageKit */; };
+		F103826223EE1C82008708B4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103826123EE1C82008708B4 /* DetailViewController.swift */; };
+		F103826423EE1CAD008708B4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103826323EE1CAD008708B4 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		F103824A23ECD120008708B4 /* Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pursuit_Core_iOS_Keyboard_Handling_LabTests.swift; sourceTree = "<group>"; };
 		F103824C23ECD120008708B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F103825523ECD1BB008708B4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F103826123EE1C82008708B4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F103826323EE1CAD008708B4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +87,9 @@
 		F103823223ECD11A008708B4 /* Pursuit-Core-iOS-Keyboard-Handling-Lab */ = {
 			isa = PBXGroup;
 			children = (
-				F103823323ECD11A008708B4 /* AppDelegate.swift */,
-				F103823523ECD11A008708B4 /* SceneDelegate.swift */,
-				F103823723ECD11A008708B4 /* ViewController.swift */,
-				F103825523ECD1BB008708B4 /* MainView.swift */,
-				F103823923ECD11A008708B4 /* Main.storyboard */,
-				F103823C23ECD11F008708B4 /* Assets.xcassets */,
-				F103823E23ECD11F008708B4 /* LaunchScreen.storyboard */,
+				F103825F23EE1C25008708B4 /* Support Files */,
+				F103825E23EE1C0F008708B4 /* View Controller */,
+				F103826023EE1C57008708B4 /* View */,
 				F103824123ECD11F008708B4 /* Info.plist */,
 			);
 			path = "Pursuit-Core-iOS-Keyboard-Handling-Lab";
@@ -102,6 +102,36 @@
 				F103824C23ECD120008708B4 /* Info.plist */,
 			);
 			path = "Pursuit-Core-iOS-Keyboard-Handling-LabTests";
+			sourceTree = "<group>";
+		};
+		F103825E23EE1C0F008708B4 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F103823723ECD11A008708B4 /* ViewController.swift */,
+				F103826123EE1C82008708B4 /* DetailViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		F103825F23EE1C25008708B4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F103823323ECD11A008708B4 /* AppDelegate.swift */,
+				F103823523ECD11A008708B4 /* SceneDelegate.swift */,
+				F103823923ECD11A008708B4 /* Main.storyboard */,
+				F103823C23ECD11F008708B4 /* Assets.xcassets */,
+				F103823E23ECD11F008708B4 /* LaunchScreen.storyboard */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		F103826023EE1C57008708B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F103825523ECD1BB008708B4 /* MainView.swift */,
+				F103826323EE1CAD008708B4 /* DetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F103823823ECD11A008708B4 /* ViewController.swift in Sources */,
+				F103826423EE1CAD008708B4 /* DetailView.swift in Sources */,
 				F103825623ECD1BB008708B4 /* MainView.swift in Sources */,
+				F103826223EE1C82008708B4 /* DetailViewController.swift in Sources */,
 				F103823423ECD11A008708B4 /* AppDelegate.swift in Sources */,
 				F103823623ECD11A008708B4 /* SceneDelegate.swift in Sources */,
 			);

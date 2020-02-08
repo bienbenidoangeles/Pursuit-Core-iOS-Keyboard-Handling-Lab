@@ -12,22 +12,29 @@ class ViewController: UIViewController {
     
     var mainView = MainView()
     
-    lazy var imageView = mainView.imageView
-    lazy var mainLabel = mainView.mainLabel
-    lazy var subLabel = mainView.subLabel
+    private lazy var imageView = mainView.imageView
+    private lazy var mainLabel = mainView.mainLabel
+    private lazy var subLabel = mainView.subLabel
+    
+    private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(screenTapped))
     
     override func loadView() {
         view = mainView
-        mainView.imageView.contentMode = .scaleAspectFill
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.backgroundColor = .systemBackground
         updateUI()
+        view.addGestureRecognizer(tapGesture)
     }
     
-    func updateUI(){
+    @objc
+    private func screenTapped(){
+        navigationController?.pushViewController(DetailViewController(), animated: true)
+    }
+    
+    private func updateUI(){
         imageView.getImage(with: "https://dwglogo.com/wp-content/uploads/2016/06/1800px_Sony_logo.png") { (result) in
             switch result{
             case .failure:
@@ -36,12 +43,14 @@ class ViewController: UIViewController {
                 }
             case .success(let image):
                 DispatchQueue.main.async {
-                    self.imageView.image = image
+                    let screenSize = UIScreen.main.bounds.size
+                    self.imageView.image = image.resizeImage(to: screenSize.width*0.8, height: screenSize.width*0.448)
+                    print(self.imageView.image!.size)
                 }
             }
         }
         mainLabel.text = "Sony"
-        subLabel.text = "Retrofit"
+        subLabel.text = "Retrofit Edition"
     }
     
 

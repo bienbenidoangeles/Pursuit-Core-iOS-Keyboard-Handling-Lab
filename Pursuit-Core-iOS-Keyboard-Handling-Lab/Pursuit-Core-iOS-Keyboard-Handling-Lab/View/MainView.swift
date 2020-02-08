@@ -12,6 +12,8 @@ class MainView: UIView {
     
     lazy var imageView: UIImageView = {
        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .white
         return imageView
     }()
     
@@ -41,8 +43,8 @@ class MainView: UIView {
     
     private func commonInit(){
         setUpImageViewConstrainsts()
-        //setUpMainLabel()
-        //setUpSubLabel()
+        setUpMainLabel()
+        setUpSubLabel()
     }
     
     private func setUpImageViewConstrainsts(){
@@ -51,7 +53,8 @@ class MainView: UIView {
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4),
+            imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
+            imageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.56)
         ])
     }
     
@@ -60,7 +63,7 @@ class MainView: UIView {
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mainLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-            mainLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor, constant: 40),
+            mainLabel.bottomAnchor.constraint(equalTo: imageView.centerYAnchor, constant: 80),
         ])
     }
     
@@ -75,7 +78,11 @@ class MainView: UIView {
 }
 
 extension UIImage{
-    func resizeImage(){
-        
+    func resizeImage(to width: CGFloat, height: CGFloat) -> UIImage {
+        let size = CGSize(width: width, height: height)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { (context) in
+            self.draw(in: CGRect(origin: .zero, size: size))
+        }
     }
 }
