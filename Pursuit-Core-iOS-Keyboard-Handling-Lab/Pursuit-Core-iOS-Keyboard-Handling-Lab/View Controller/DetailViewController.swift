@@ -14,9 +14,10 @@ class DetailViewController: UIViewController {
     let detailView = DetailView()
     lazy var imageView = detailView.imageView
     lazy var loginLabel = detailView.loginLabel
+    lazy var userNameTextField = detailView.userNameTextField
+    lazy var passwordTextField = detailView.passwordTextField
     lazy var loginButton = detailView.loginButton
     lazy var passwordButton = detailView.passwordButton
-//    var player: AVPlayer?
     
     override func loadView() {
         view = detailView
@@ -25,26 +26,10 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
         updateUI()
     }
-    
-//    private func play(url:NSURL) {
-//        print("playing \(url)")
-//
-//        do {
-//
-//            let playerItem = AVPlayerItem(url: url as URL)
-//
-//            self.player = try AVPlayer(playerItem: playerItem)
-//            player!.volume = 1.0
-//            player!.play()
-//        } catch let error as NSError {
-//            self.player = nil
-//            print(error.localizedDescription)
-//        } catch {
-//            print("AVAudioPlayer init failed")
-//        }
-//    }
     
     private func updateUI(){
         imageView.getImage(with: "https://dwglogo.com/wp-content/uploads/2016/06/1800px_Sony_logo.png") { (result) in
@@ -61,9 +46,13 @@ class DetailViewController: UIViewController {
                 }
             }
         }
-        loginLabel.text = "Login"
-        loginButton.titleLabel?.text = "Login"
-        passwordButton.titleLabel?.text = "Forgot Password?"
     }
 
+}
+
+extension DetailViewController:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
