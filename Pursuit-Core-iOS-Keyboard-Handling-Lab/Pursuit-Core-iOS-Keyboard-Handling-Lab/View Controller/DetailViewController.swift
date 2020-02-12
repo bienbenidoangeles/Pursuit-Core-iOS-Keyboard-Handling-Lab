@@ -36,6 +36,16 @@ class DetailViewController: UIViewController {
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         updateUI()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+        self.detailView.addGestureRecognizer(tapGesture)
+        //print("Original Y constrainst LOAD", originalYConstrainst.constant)
+        print("LogoCenter Y constrainst LOAD", logoCenterYConstrainst.constant)
+        originalYConstrainst = logoCenterYConstrainst
+    }
+    
+    @objc
+    private func dismissKeyboard(_ gesture: UITapGestureRecognizer){
+        view.endEditing(true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,9 +79,12 @@ class DetailViewController: UIViewController {
             return
         }
         
-        originalYConstrainst = logoCenterYConstrainst
-        print("Original Y constrainst", originalYConstrainst.constant)
+
+        print("Original Y constrainst UP b", originalYConstrainst.constant)
+        print("LogoCenter Y constrainst UP b", logoCenterYConstrainst.constant)
         logoCenterYConstrainst.constant -= (height*0.9)
+        print("Original Y constrainst UP a", originalYConstrainst.constant)
+        print("LogoCenter Y constrainst UP a", logoCenterYConstrainst.constant)
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
@@ -80,8 +93,11 @@ class DetailViewController: UIViewController {
     
     private func resetUI(){
         keyboardIsVisible = false
-        logoCenterYConstrainst.constant -= originalYConstrainst.constant
-        print("Original Y constrainst", originalYConstrainst.constant)
+        print("Original Y constrainst DOWN b", originalYConstrainst.constant)
+        print("LogoCenter Y constrainst DOWN b", logoCenterYConstrainst.constant)
+        logoCenterYConstrainst.constant -= -218.70000000000002
+        print("Original Y constrainst DOWN a", originalYConstrainst.constant)
+        print("LogoCenter Y constrainst DOWN a", logoCenterYConstrainst.constant)
         UIView.animate(withDuration: 1.0) {
             self.view.layoutIfNeeded()
         }
