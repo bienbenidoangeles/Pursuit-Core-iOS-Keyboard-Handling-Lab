@@ -59,6 +59,10 @@ class DetailView: UIView {
         button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Light", size: (button.titleLabel?.font.pointSize)!)
         return button
     }()
+    
+    lazy var imageViewCenterYConstrainst: NSLayoutConstraint = {
+        imageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: -self.frame.size.height*0.15)
+    }()
         
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -85,7 +89,7 @@ class DetailView: UIView {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1),
-            imageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: -self.frame.size.height*0.15),
+            imageViewCenterYConstrainst,
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
