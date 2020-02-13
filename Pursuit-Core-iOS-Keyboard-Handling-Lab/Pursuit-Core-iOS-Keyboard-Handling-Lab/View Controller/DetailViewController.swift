@@ -67,6 +67,7 @@ class DetailViewController: UIViewController {
     private func keyboardWillShow(_ notification: NSNotification){
         guard let keyboardFrame = notification.userInfo?["UIKeyboardFrameBeginUserInfoKey"] as? CGRect else { return  }
         moveKeyBoardUp(keyboardFrame.size.height)
+        print(keyboardFrame.size.height)
     }
     
     @objc
@@ -80,11 +81,11 @@ class DetailViewController: UIViewController {
         }
         
 
-        print("Original Y constrainst UP b", originalYConstrainst.constant)
-        print("LogoCenter Y constrainst UP b", logoCenterYConstrainst.constant)
-        logoCenterYConstrainst.constant -= (height*0.9)
-        print("Original Y constrainst UP a", originalYConstrainst.constant)
-        print("LogoCenter Y constrainst UP a", logoCenterYConstrainst.constant)
+//        print("Original Y constrainst UP b", originalYConstrainst.constant)
+//        print("LogoCenter Y constrainst UP b", logoCenterYConstrainst.constant)
+        logoCenterYConstrainst.constant -= (height*0.5)
+//        print("Original Y constrainst UP a", originalYConstrainst.constant)
+//        print("LogoCenter Y constrainst UP a", logoCenterYConstrainst.constant)
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
@@ -95,9 +96,9 @@ class DetailViewController: UIViewController {
         keyboardIsVisible = false
         print("Original Y constrainst DOWN b", originalYConstrainst.constant)
         print("LogoCenter Y constrainst DOWN b", logoCenterYConstrainst.constant)
-        logoCenterYConstrainst.constant -= -218.70000000000002
-        print("Original Y constrainst DOWN a", originalYConstrainst.constant)
-        print("LogoCenter Y constrainst DOWN a", logoCenterYConstrainst.constant)
+        logoCenterYConstrainst.constant -= -121.5
+//        print("Original Y constrainst DOWN a", originalYConstrainst.constant)
+//        print("LogoCenter Y constrainst DOWN a", logoCenterYConstrainst.constant)
         UIView.animate(withDuration: 1.0) {
             self.view.layoutIfNeeded()
         }
